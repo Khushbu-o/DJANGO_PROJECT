@@ -1,0 +1,25 @@
+ body{
+            background:url(/static/image/back.jpg);
+            background-size:cover
+        }
+
+        h1{
+            text-align:center;
+
+        }
+        p{
+            text-align: justify;
+            font-size:20px;
+        }
+        p.a1{
+            font-size:22px;
+            font-weight:bold;
+        }
+        li{
+            font-size:20px;
+            font-weight:bold;
+        }
+
+        p.b{
+            font-size:18px
+        }

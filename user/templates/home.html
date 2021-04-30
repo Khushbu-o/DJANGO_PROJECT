@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Closet App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body style="background-color:#4DB6AC;">
+<center><p style="font-size:40px; font-weight:bold; font-family:Cursive;">Closet</p></center>
+
+{% block content %}
+<div class="card-columns">
+    {% for clothes in fashion_store %}
+    <div class="card" style="width: 18rem; height:24rem">
+   <img class="card-img-top" src="{{ clothes.cover.url }}" style="width: 18rem; height:12rem;">
+  <div class="card-body">
+    <h5 class="card-title" style="font-size:18px">{{ clothes.brand }}</h5>
+    <p class="card-text" >{{ clothes.name }}</p>
+   <div class="card-footer bg-transparent border-dark">
+   <p class="card-title">{{clothes.price}}</p>
+   <center>
+       <a href="update/{{clothes.id}}" class="btn btn-warning" id = '{{clothes.id}}'>edit</a>
+       <a href="delete/{{clothes.id}}" class="btn btn-danger" id = '{{clothes.id}}'>delete</a>
+    </center>
+    </div>
+  </div>
+</div>
+    {% endfor %}
+</div>
+{% endblock %}
+</body>
+</html>

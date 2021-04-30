@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload</title>
+
+    <style>
+        body{
+            background-image:url(/static/image/back2.jpg);
+            background-size:cover;
+        }
+
+        td{
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+
+        }
+
+        button {
+            background-color: black;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 8%;
+            font-size:15px
+        }
+        button:hover {
+              opacity: 0.8;
+        }
+
+    </style>
+</head>
+<body>
+{% block content %}
+<center>
+    <h1 class='display-3' style=" color: black;">Update Closet</h1>
+    <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <!--<table>{{upload_form.as_table}}</table>-->
+    <table class='w-50 table table-light' style="border-radius: 10px;">
+    {% for field in upload_form %}
+    <tr>
+        <th>{{field.label}}</th>
+        <td>{{field}}</td>
+    </tr>
+    {%endfor%}
+    </table>
+    <button type="submit">Submit</button>
+    </form>
+</center>
+{% endblock %}
+</body>
+</html>
